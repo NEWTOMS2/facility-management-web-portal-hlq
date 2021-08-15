@@ -1,0 +1,47 @@
+<div class="container">
+    <mat-card>
+        <form [formGroup]="form" (ngSubmit)="addUser()">
+            <mat-grid-list cols="4" rowHeight="70px">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                  <mat-form-field class="width">
+                    <mat-label>Correo Electrónico</mat-label>
+                    <input matInput formControlName="email">
+                  </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile
+                    [colspan]="3"
+                    [rowspan]="5"
+                    [style.background]="'lightblue'">
+                  IMG
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="width">
+                      <mat-label>Contraseña</mat-label>
+                      <input matInput formControlName="pw">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="width">
+                      <mat-label>Nombre</mat-label>
+                      <input matInput formControlName="name">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="width">
+                        <mat-label>Tipo de usuario</mat-label>
+                        <mat-select formControlName="utype">
+                          <mat-option *ngFor="let item of u_type" [value]="item">
+                            {{item}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <button mat-raised-button style="margin-right: 10px; ">VOLVER</button>
+                    <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">ACEPTAR</button>
+                </mat-grid-tile>
+              </mat-grid-list>              
+        </form>
+    </mat-card>
+
+</div>

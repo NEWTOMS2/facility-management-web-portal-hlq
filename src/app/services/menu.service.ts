@@ -1,17 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { baseUrl } from 'src/environments/environment';
+import { Menu } from '../interfaces/menu';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
-
-success = true;
+export class MenuService {
 
   constructor(private http:HttpClient) { }
-  login(data):Observable<any>{
-    return this.http.post(`${baseUrl}login`, data);
+
+  getMenu(): Observable<Menu[]> {
+    return this.http.get<Menu[]>('./assets/data/menu.json')
   }
 }
