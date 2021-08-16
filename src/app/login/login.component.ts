@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthServiceService } from '../auth-service.service';
+import { AuthServiceService } from '../services/auth-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -31,27 +31,17 @@ export class LoginComponent implements OnInit {
     const pw = this.formGroup.value.u_password; 
     console.log(user);
     console.log(pw);
-    if(this.formGroup.valid){
-      
-      if (user == 'prueba@gmail.com' && pw == '1234') {
-        this.setLoading();
-      }
-      else {
-        this.error();
-      }
 
-      /*
-      this.authService.login(this.formGroup.value).subscribe(result=>{
-        if(result.success){
+    if(this.formGroup.valid){
+      this.authService.login(user, pw).subscribe((result: any) =>{
+        if(result.data.length > 0){
           console.log(result);
-          alert(result.message);
           this.setLoading();
         } else {
           this.formGroup.reset;
-          alert(result.message);
+          this.error();
         }
       })
-      */
     }
   }
   
