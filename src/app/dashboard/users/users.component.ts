@@ -29,8 +29,15 @@ export class UsersComponent implements OnInit {
   }
 
   loadUsers(){
-    this.users = this._userService.getUsers();
-    this.dataSource = new MatTableDataSource(this.users);
+    this.dataSource = new MatTableDataSource();
+    this._userService.getUsers().subscribe((result: any) =>{
+      if(result.data.length > 0){
+        console.log(result);
+        this.users = result.data.slice();
+        this.dataSource = new MatTableDataSource(this.users);
+        console.log(this.users);
+      }
+    });
   }
 
   ngAfterViewInit() {

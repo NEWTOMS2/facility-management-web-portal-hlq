@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class AddUserComponent implements OnInit {
 
-  u_type: any[] = ['Administrador', 'Usuario'];
+  u_type: any[] = ['ADMIN'];
   form: FormGroup;
 
   constructor(private fb: FormBuilder, private _userService: UserService,
@@ -28,8 +28,7 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addUser() {
-
+  createUser() {
     const user: User = {
       id: 0,
       u_email: this.form.value.email,
@@ -39,7 +38,7 @@ export class AddUserComponent implements OnInit {
       u_type: this.form.value.utype,
       u_status: true //Por defecto siempre que se crea un usuario esta activo.
     }
-    this._userService.addUser(user);
+    this._userService.createUser(user);
     this.router.navigate(['/dashboard/users']);
 
     this._snackBar.open('Usuario agregado exitosamente.', '', {

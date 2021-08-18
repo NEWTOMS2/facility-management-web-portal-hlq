@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
 import { User } from '../interfaces/user';
 
 @Injectable({
@@ -6,26 +9,43 @@ import { User } from '../interfaces/user';
 })
 export class UserService {
 
-  users: User[] = [
-    {id: 1, u_email: 'prueba@gmail.com', u_password: '', u_name: 'Prueba 1', u_surname: 'Prueba 1', 
-    u_type: 'ADMIN', u_status: true},
-    {id: 2, u_email: 'prueba@gmail.com', u_password: '', u_name: 'Prueba 2', u_surname: 'Prueba 2', 
-    u_type: 'ADMIN', u_status: true},
-    {id: 3, u_email: 'prueba@gmail.com', u_password: '', u_name: 'Prueba 3', u_surname: 'Prueba 3', 
-    u_type: 'ADMIN', u_status: true}
-  ];
+  users: User[] = [];
 
-  constructor() { }
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+
+  constructor(private http: HttpClient) {}
 
   getUsers() {
-    return this.users.slice();
+    return this.http.get<User>('https://fm-users-system-api.us-e1.cloudhub.io/api/users')
+    .pipe(
+      catchError(this.handleError)
+    )
   }
 
   deleteUser(id: number) {
     this.users.splice(id, 1);
   }
 
-  addUser(user: User){
-    this.users.unshift(user);
+  createUser(user: User){
+    const requestUser =  {
+      u_email: user.u_email,
+      u_password: user.u_password,
+      u_name: user.u_name,
+      u_surname: user.u_surname,
+      u_type: user.u_type,
+      u_status: user.u_status
+  }
+  return this.http.post<User>('', JSON.stringify(requestUser), this.httpOptions)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  handleError(error: any ) {
+    return throwError(error);
   }
 }
