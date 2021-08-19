@@ -39,7 +39,8 @@ export class UserService {
       u_type: user.u_type,
       u_status: user.u_status
   }
-  return this.http.post<User>('', JSON.stringify(requestUser), this.httpOptions)
+  console.log(JSON.stringify(requestUser));
+  return this.http.post<any>('https://fm-users-system-api.us-e1.cloudhub.io/api/users', JSON.stringify(requestUser), this.httpOptions)
     .pipe(
       catchError(this.handleError)
     )
