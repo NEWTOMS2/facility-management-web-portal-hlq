@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class UsersComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private _userService: UserService, private _snackBar: MatSnackBar) { }
+  constructor(private _userService: UserService, private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
     this.loadUsers();
@@ -56,13 +57,15 @@ export class UsersComponent implements OnInit {
 
   deleteUser(id: number){
     console.log(id);
-    this._userService.deleteUser(id);
-    this.loadUsers();
+  
+    this._userService.deleteUser(id.toString()).subscribe(() => {
+      this.loadUsers();
 
-    this._snackBar.open('Usuario eliminado exitosamente.', '', {
-      duration: 1500,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+      this._snackBar.open('Usuario eliminado exitosamente.', '', {
+        duration: 1500,
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom'
+      });
     });
   }
 }

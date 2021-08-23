@@ -26,11 +26,14 @@ export class UserService {
     )
   }
 
-  deleteUser(id: number) {
-    this.users.splice(id, 1);
+  deleteUser(id: string) {
+    return this.http.delete<any>('https://fm-users-system-api.us-e1.cloudhub.io/api/users/' + id)
+    .pipe(
+      catchError(this.handleError)
+    )
   }
 
-  createUser(user: User){
+  createUser(user: User) {
     const requestUser =  {
       u_email: user.u_email,
       u_password: user.u_password,

@@ -39,7 +39,7 @@ export class AddUserComponent implements OnInit {
       u_type: this.form.value.utype,
       u_status: true //Por defecto siempre que se crea un usuario esta activo.
     }
-    this._userService.createUser(user).subscribe(()=>{
+    this._userService.createUser(user).subscribe(() => {
       this.router.navigate(['dashboard']);
 
       this._snackBar.open('Usuario agregado exitosamente.', '', {
