@@ -5,11 +5,11 @@
     },
     {
         "name": "Agenda Diaria",
-        "redirect": "/dashboard"
+        "redirect": "/dashboard/tasks"
     },
     {
         "name": "Administración de Activos",
-        "redirect": "/dashboard"
+        "redirect": "/dashboard/assets"
     },
     {
         "name": "Control de Acceso",

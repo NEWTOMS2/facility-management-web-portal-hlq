@@ -1,21 +1,32 @@
-<div class="body">
-  <div class="login">
-    <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>
-    <form *ngIf="!loading" [formGroup]="formGroup">
-      <img [src]="" alt="" width="50%" height="80%">
-      <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
-      <mat-form-field class="width" appearance="fill">
-          <mat-label>Correo electrónico</mat-label>
-          <input matInput placeholder="Correo electrónico" formControlName="u_email" autocomplete="off">
-        </mat-form-field>
+<div>
+  <mat-toolbar>
+    <h1>SISTEMA DE GESTIÓN DE INSTALACIONES</h1>
+  </mat-toolbar>  
+  <div class="body">
+    <div class="login">
+      <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>
+      <form *ngIf="!loading" [formGroup]="formGroup">
+        <img [src]="" alt="" width="50%" height="80%">
+        <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
         <mat-form-field class="width" appearance="fill">
-          <mat-label>Contraseña</mat-label>
-          <input matInput type="password" placeholder="Contraseña" formControlName="u_password">
-        </mat-form-field>
-        <br>
-        <button (click)="loginProces()" class="width button" mat-raised-button type="submit" color="primary" 
-          [disabled]="formGroup.invalid">I N G R E S A R</button>
-        <button class="width" mat-button type="button">Olvidé mi contraseña</button>
-    </form>
+            <mat-label>Correo electrónico</mat-label>
+            <input matInput placeholder="Correo electrónico" formControlName="u_email" autocomplete="off">
+          </mat-form-field>
+          <mat-form-field class="width" appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" placeholder="Contraseña" formControlName="u_password">
+          </mat-form-field>
+          <br>
+          <button (click)="loginProces()" class="width button" mat-raised-button type="submit" color="primary" 
+            [disabled]="formGroup.invalid">I N G R E S A R</button>
+          <button class="width" mat-button type="button">Olvidé mi contraseña</button>
+      </form>
+    </div>
   </div>
+  <mat-toolbar>
+    <span><img src="../../../assets/img/grupo-hlq-logo.png" width="180px"></span>
+    <span class="example-spacer"></span>
+    <h4>Desarrollado por NEWTOMS LLC</h4>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
 </div>

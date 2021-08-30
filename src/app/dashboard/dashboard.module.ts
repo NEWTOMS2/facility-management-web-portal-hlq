@@ -8,6 +8,8 @@ import { UsersComponent } from './users/users.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { AssetsComponent } from './assets/assets.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { UpdateUserComponent } from './users/update-user/update-user.component';
     UsersComponent,
     SidenavComponent,
     AddUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    TasksComponent,
+    AssetsComponent
   ],
   imports: [
     CommonModule,
