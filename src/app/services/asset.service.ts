@@ -3,13 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Task } from '../interfaces/task';
+import { Asset } from '../interfaces/asset';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService {
+export class AssetService {
 
-  tasks: Task[] = [];
+  assets: Asset[] = [];
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -19,8 +20,8 @@ export class TaskService {
 
   constructor(private http: HttpClient) {}
 
-  getTasks() {
-    return this.http.get<Task>('https://fm-tasks-system-api.us-e1.cloudhub.io/api/tasks')
+  getAssets() {
+    return this.http.get<Asset>('https://fm-assets-system-api.us-e1.cloudhub.io/api/assets')
     .pipe(
       catchError(this.handleError)
     )
