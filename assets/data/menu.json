@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Edificios",
+        "redirect": "/dashboard"
+    },
+    {
+        "name": "Agenda Diaria",
+        "redirect": "/dashboard/tasks"
+    },
+    {
+        "name": "Administración de Activos",
+        "redirect": "/dashboard/assets"
+    },
+    {
+        "name": "Control de Acceso",
+        "redirect": "/dashboard"
+    },
+    {
+        "name": "Administración de Clientes",
+        "redirect": "/dashboard"
+    },
+    {
+        "name": "Agenda de Mantenimiento",
+        "redirect": "/dashboard"
+    },
+    {
+        "name": "Inteligencia de Negocios",
+        "redirect": "/dashboard"
+    },
+    {
+        "name": "Usuarios",
+        "redirect": "/dashboard/users"
+    }
+]
