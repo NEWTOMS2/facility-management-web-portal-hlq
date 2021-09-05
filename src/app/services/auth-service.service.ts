@@ -3,7 +3,6 @@ import { ThrowStmt } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { baseUrl } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
