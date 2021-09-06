@@ -21,7 +21,9 @@ const routes: Routes = [
   ],
   imports: [
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {
+      useHash: true,
+    }),
     SharedModule
   ],
   exports: [RouterModule],
