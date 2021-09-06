@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
 import { SharedModule } from './shared/shared.module';
+import { ResetPwComponent } from './reset-pw/reset-pw.component';
 
 const routes: Routes = [
   { path:'', pathMatch: 'full', redirectTo: '/login'},
   { path:'login', component:LoginComponent},
+  { path:'reset-pw', component:ResetPwComponent},
   { path:'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(x => x.DashboardModule) },
   { path:'**', pathMatch: 'full', redirectTo: '/login'}
 ];
@@ -17,7 +19,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ResetPwComponent
   ],
   imports: [
     BrowserAnimationsModule,

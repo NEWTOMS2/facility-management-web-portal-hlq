@@ -2,7 +2,7 @@
   <h1>SISTEMA DE GESTIÓN DE INSTALACIONES</h1>
 </mat-toolbar>  
 <div class="body">
-  <img src="../../assets/img/login.png" class="mid-img">
+  <img src="assets/img/login.png" class="mid-img">
   <div class="login">
     <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>
     <form *ngIf="!loading" [formGroup]="formGroup">
@@ -18,11 +18,11 @@
         <br>
         <button (click)="loginProces()" class="width button" mat-raised-button type="submit" 
           [disabled]="formGroup.invalid">I N G R E S A R</button>
-        <button class="width text-shadow" style="top: 10px;" mat-button type="button">Olvidé mi contraseña</button>
+        <button routerLink="/reset-pw" class="width text-shadow" style="top: 10px;" mat-button type="button">Olvidé mi contraseña</button>
     </form>
   </div>
 </div>
 <footer class="footer">
-    <span><img src="../../../assets/img/grupo-hlq-logo.png" width="250px"></span>
+    <span><img src="assets/img/grupo-hlq-logo.png" width="250px"></span>
     <p>© Copyright <a href="https://www.newtoms.com/"> NEWTOMS LLC</a> 2021. All Rights Reserved.</p>
 </footer>
