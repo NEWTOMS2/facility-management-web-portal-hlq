@@ -10,6 +10,10 @@ import { AddUserComponent } from './users/add-user/add-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { AssetsComponent } from './assets/assets.component';
+import { AccessControlComponent } from './access-control/access-control.component';
+import { ClientsComponent } from './clients/clients.component';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
+import { BiComponent } from './bi/bi.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { AssetsComponent } from './assets/assets.component';
     AddUserComponent,
     UpdateUserComponent,
     TasksComponent,
-    AssetsComponent
+    AssetsComponent,
+    AccessControlComponent,
+    ClientsComponent,
+    MaintenanceComponent,
+    BiComponent
   ],
   imports: [
     CommonModule,
