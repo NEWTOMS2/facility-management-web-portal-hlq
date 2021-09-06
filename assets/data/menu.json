@@ -13,19 +13,19 @@
     },
     {
         "name": "Control de Acceso",
-        "redirect": "/dashboard"
+        "redirect": "/dashboard/access-control"
     },
     {
         "name": "Administración de Clientes",
-        "redirect": "/dashboard"
+        "redirect": "/dashboard/clients"
     },
     {
         "name": "Agenda de Mantenimiento",
-        "redirect": "/dashboard"
+        "redirect": "/dashboard/maintenance"
     },
     {
         "name": "Inteligencia de Negocios",
-        "redirect": "/dashboard"
+        "redirect": "/dashboard/bi"
     },
     {
         "name": "Usuarios",
