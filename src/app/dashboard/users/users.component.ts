@@ -6,6 +6,7 @@ import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { DialogService } from 'src/app/services/dialog.service';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class UsersComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private _userService: UserService, private _snackBar: MatSnackBar, private router: Router) { }
+  constructor(private _userService: UserService, private _snackBar: MatSnackBar, private router: Router, 
+    private dialog: DialogService) { }
 
   ngOnInit(): void {
     this.loadUsers();
@@ -53,6 +55,22 @@ export class UsersComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  confirmCancelDialog(id: number) {
+    this.dialog
+      .confirmDialog({
+        title: 'Confirmar acción',
+        message: '¿Deseas eliminar este usuario?',
+        confirmCaption: 'Eliminar',
+        cancelCaption: 'Cancelar',
+      })
+      .subscribe((confirmed) => {
+        if (confirmed) {
+          console.log('El usuario confirmo esta acción.');
+          this.deleteUser(id);
+        }
+      });
   }
 
   deleteUser(id: number){

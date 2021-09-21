@@ -5,6 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Task } from 'src/app/interfaces/task';
+import { DialogService } from 'src/app/services/dialog.service';
 import { TaskService } from 'src/app/services/task.service';
 
 @Component({
@@ -23,7 +24,8 @@ export class TasksComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   
-  constructor(private _taskService: TaskService, private _snackBar: MatSnackBar, private router: Router) { }
+  constructor(private _taskService: TaskService, private _snackBar: MatSnackBar, private router: Router, 
+    private dialog: DialogService) { }
 
   ngOnInit(): void {
     this.loadTasks();
@@ -39,6 +41,22 @@ export class TasksComponent implements OnInit {
         console.log(this.tasks);
       }
     });
+  }
+
+  confirmCancelDialog(id: number) {
+    this.dialog
+      .confirmDialog({
+        title: 'Confirmar acción',
+        message: '¿Deseas eliminar esta tarea?',
+        confirmCaption: 'Eliminar',
+        cancelCaption: 'Cancelar',
+      })
+      .subscribe((confirmed) => {
+        if (confirmed) {
+          console.log('El usuario confirmo esta acción.');
+          
+        }
+      });
   }
 
   ngAfterViewInit() {

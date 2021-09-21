@@ -14,6 +14,7 @@ import { AccessControlComponent } from './access-control/access-control.componen
 import { ClientsComponent } from './clients/clients.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { BiComponent } from './bi/bi.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BiComponent } from './bi/bi.component';
     AccessControlComponent,
     ClientsComponent,
     MaintenanceComponent,
-    BiComponent
+    BiComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,

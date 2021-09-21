@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Asset } from 'src/app/interfaces/asset';
 import { AssetService } from 'src/app/services/asset.service';
+import { DialogService } from 'src/app/services/dialog.service';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class AssetsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   
-  constructor(private _assetService: AssetService, private _snackBar: MatSnackBar, private router: Router) { }
+  constructor(private _assetService: AssetService, private _snackBar: MatSnackBar, private router: Router, 
+    private dialog: DialogService) { }
 
   ngOnInit(): void {
     this.loadAssets();
@@ -42,6 +44,22 @@ export class AssetsComponent implements OnInit {
     });
   }
 
+  confirmCancelDialog(id: number) {
+    this.dialog
+      .confirmDialog({
+        title: 'Confirmar acción',
+        message: '¿Deseas eliminar este activo?',
+        confirmCaption: 'Eliminar',
+        cancelCaption: 'Cancelar',
+      })
+      .subscribe((confirmed) => {
+        if (confirmed) {
+          console.log('El usuario confirmo esta acción.');
+    
+        }
+      });
+  }
+  
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
