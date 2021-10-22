@@ -1,9 +1,5 @@
 [
     {
-        "name": "Edificios",
-        "redirect": "/dashboard"
-    },
-    {
         "name": "Agenda Diaria",
         "redirect": "/dashboard/tasks"
     },
