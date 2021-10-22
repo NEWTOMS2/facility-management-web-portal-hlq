@@ -1,0 +1,36 @@
+.body {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    align-items: center;
+}
+
+.mid-img {
+    width: 500px;
+    margin-left: auto;
+    position: absolute;
+    align-self: center;
+}
+
+.text {
+    width: 100%;
+    max-width: 330px;
+    padding: 10px;
+    margin-right: 100px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    text-align: center;
+
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    color: rgba(0,0,0,.87);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

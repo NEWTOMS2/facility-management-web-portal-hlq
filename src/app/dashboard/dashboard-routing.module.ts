@@ -5,6 +5,7 @@ import { AssetsComponent } from './assets/assets.component';
 import { BiComponent } from './bi/bi.component';
 import { ClientsComponent } from './clients/clients.component';
 import { DashboardComponent } from './dashboard.component';
+import { HomeComponent } from './home/home.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
@@ -13,7 +14,7 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path:'', component:DashboardComponent, children: [
-    { path: '', component:UsersComponent},
+    { path: '', component:HomeComponent},
     { path: 'users', component:UsersComponent},
     { path: 'users/add', component:AddUserComponent},
     { path: 'users/update', component:UpdateUserComponent},

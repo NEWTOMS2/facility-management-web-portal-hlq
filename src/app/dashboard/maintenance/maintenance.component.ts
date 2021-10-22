@@ -12,4 +12,11 @@ export class MaintenanceComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openNewMaintenanceTap() {
+    window.open('https://web.geocall.cloud/naos/w/index.htm');
+  }
+
+  openNewInspectionTap() {
+    window.open('https://space1.overit.it/');
+  }
 }

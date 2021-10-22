@@ -15,6 +15,7 @@ import { ClientsComponent } from './clients/clients.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { BiComponent } from './bi/bi.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DialogComponent } from './dialog/dialog.component';
     ClientsComponent,
     MaintenanceComponent,
     BiComponent,
-    DialogComponent
+    DialogComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

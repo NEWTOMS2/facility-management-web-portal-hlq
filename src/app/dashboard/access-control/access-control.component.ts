@@ -12,4 +12,8 @@ export class AccessControlComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openNewControlAccessTap() {
+    window.open('https://d2z8t35ebo69h4.cloudfront.net/');
+  }
+
 }
