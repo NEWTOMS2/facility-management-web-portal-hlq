@@ -12,4 +12,7 @@ export class BiComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openNewBITap() {
+    window.open('http://18.207.109.180/#/pinboard/523e86d4-0ce9-49bb-ba96-bfbced77a3dc/');
+  }
 }
