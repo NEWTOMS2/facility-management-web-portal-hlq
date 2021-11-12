@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class AddUserComponent implements OnInit {
 
-  u_type: any[] = ['ADMIN'];
+  u_type: any[] = ['ADMIN', 'USER'];
   form: FormGroup;
 
   constructor(private fb: FormBuilder, private _userService: UserService,

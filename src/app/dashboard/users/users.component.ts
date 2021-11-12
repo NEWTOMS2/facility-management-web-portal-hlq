@@ -73,6 +73,12 @@ export class UsersComponent implements OnInit {
       });
   }
 
+  updateUser(id: number){
+    console.log(id);
+
+    this.router.navigate(['/dashboard/users/update'], { queryParams: { id: id } });
+  }
+
   deleteUser(id: number){
     console.log(id);
   

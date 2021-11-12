@@ -19,6 +19,13 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  getUser(id: number) {
+    return this.http.get<User>('https://fm-users-system-api.us-e1.cloudhub.io/api/users/' + id)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
+
   getUsers() {
     return this.http.get<User>('https://fm-users-system-api.us-e1.cloudhub.io/api/users')
     .pipe(
@@ -44,6 +51,22 @@ export class UserService {
   }
   console.log(JSON.stringify(requestUser));
   return this.http.post<any>('https://fm-users-system-api.us-e1.cloudhub.io/api/users', JSON.stringify(requestUser), this.httpOptions)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  updateUser(user: User) {
+    const requestUser =  {
+      id: user.id,
+      u_email: user.u_email,
+      u_name: user.u_name,
+      u_surname: user.u_surname,
+      u_type: user.u_type,
+      u_status: user.u_status
+  }
+  console.log(JSON.stringify(requestUser));
+  return this.http.patch<any>('https://fm-users-system-api.us-e1.cloudhub.io/api/users/' + requestUser.id, JSON.stringify(requestUser), this.httpOptions)
     .pipe(
       catchError(this.handleError)
     )
