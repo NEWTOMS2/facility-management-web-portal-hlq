@@ -1,1 +1,70 @@
-<p>add-task works!</p>
+<div class="container">
+    <div class="mat-elevation-z8" style="margin-top: 10%;">
+      <mat-card>
+        <form [formGroup]="form" (ngSubmit)="createTask()">
+            <mat-grid-list cols="3" rowHeight="70px">
+              <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="width">
+                      <mat-label>ID</mat-label>
+                      <input matInput formControlName="id" autocomplete="off">
+                    </mat-form-field>
+                  </mat-grid-tile>
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                  <mat-form-field class="width">
+                    <mat-label>Descripción de Tarea</mat-label>
+                    <input matInput formControlName="t_description" autocomplete="off">
+                  </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="width">
+                      <mat-label>Fecha creada</mat-label>
+                      <input matInput formControlName="t_date_created" autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-form-field class="width">
+                      <mat-label>Estatus</mat-label>
+                      <input matInput formControlName="t_status" autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="width">
+                      <mat-label>Opcional 1</mat-label>
+                      <input matInput formControlName="t_filler1" autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-form-field class="width">
+                      <mat-label>Opcional 2</mat-label>
+                      <input matInput formControlName="t_filler2" autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="width">
+                        <mat-label>Empleado a cargo</mat-label>
+                        <mat-select formControlName="fk_employee">
+                          <mat-option *ngFor="let item of t_employee" [value]="item">
+                            {{item}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-form-field class="width">
+                        <mat-label>Turno de trabajo</mat-label>
+                        <mat-select formControlName="fk_shift">
+                          <mat-option *ngFor="let item of t_shift" [value]="item">
+                            {{item}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="3" [rowspan]="1">
+                    <button [routerLink]="['/dashboard/tasks']" mat-raised-button style="margin-right: 10px; ">VOLVER</button>
+                    <button type="submit" mat-raised-button color="primary">ACEPTAR</button>
+                </mat-grid-tile>
+              </mat-grid-list>              
+        </form>
+      </mat-card>
+    </div>
+  </div>

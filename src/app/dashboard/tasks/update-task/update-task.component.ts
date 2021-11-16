@@ -62,7 +62,7 @@ export class UpdateTaskComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateUser() {
+  updateTask() {
     const task: Task = {
       id: this.form.value.id,
       t_description: this.form.value.t_description,
