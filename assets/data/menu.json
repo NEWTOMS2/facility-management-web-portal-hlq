@@ -1,5 +1,9 @@
 [
     {
+        "name": "Usuarios",
+        "redirect": "/dashboard/users"
+    },
+    {
         "name": "Agenda Diaria",
         "redirect": "/dashboard/tasks"
     },
@@ -22,9 +26,5 @@
     {
         "name": "Inteligencia de Negocios",
         "redirect": "/dashboard/bi"
-    },
-    {
-        "name": "Usuarios",
-        "redirect": "/dashboard/users"
     }
 ]
