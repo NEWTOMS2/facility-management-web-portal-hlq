@@ -16,6 +16,10 @@ import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { BiComponent } from './bi/bi.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { HomeComponent } from './home/home.component';
+import { AddTaskComponent } from './tasks/add-task/add-task.component';
+import { UpdateTaskComponent } from './tasks/update-task/update-task.component';
+import { AddAssetComponent } from './assets/add-asset/add-asset.component';
+import { UpdateAssetComponent } from './assets/update-asset/update-asset.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { HomeComponent } from './home/home.component';
     MaintenanceComponent,
     BiComponent,
     DialogComponent,
-    HomeComponent
+    HomeComponent,
+    AddTaskComponent,
+    UpdateTaskComponent,
+    AddAssetComponent,
+    UpdateAssetComponent
   ],
   imports: [
     CommonModule,

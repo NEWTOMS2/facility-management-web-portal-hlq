@@ -43,22 +43,6 @@ export class TasksComponent implements OnInit {
     });
   }
 
-  confirmCancelDialog(id: number) {
-    this.dialog
-      .confirmDialog({
-        title: 'Confirmar acción',
-        message: '¿Deseas eliminar esta tarea?',
-        confirmCaption: 'Eliminar',
-        cancelCaption: 'Cancelar',
-      })
-      .subscribe((confirmed) => {
-        if (confirmed) {
-          console.log('El usuario confirmo esta acción.');
-          
-        }
-      });
-  }
-
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -73,4 +57,39 @@ export class TasksComponent implements OnInit {
     }
   }
 
+  confirmCancelDialog(id: number) {
+    this.dialog
+      .confirmDialog({
+        title: 'Confirmar acción',
+        message: '¿Deseas eliminar esta tarea?',
+        confirmCaption: 'Eliminar',
+        cancelCaption: 'Cancelar',
+      })
+      .subscribe((confirmed) => {
+        if (confirmed) {
+          console.log('El usuario confirmo esta acción.');
+          this.deleteTask(id);
+        }
+      });
+  }
+
+  updateTask(id: number){
+    console.log(id);
+
+    this.router.navigate(['/dashboard/tasks/update'], { queryParams: { id: id } });
+  }
+
+  deleteTask(id: number){
+    console.log(id);
+  
+    this._taskService.deleteTask(id.toString()).subscribe(() => {
+      this.loadTasks();
+
+      this._snackBar.open('Tarea eliminada exitosamente.', '', {
+        duration: 1500,
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom'
+      });
+    });
+  }
 }
