@@ -29,7 +29,7 @@ export class UpdateTaskComponent implements OnInit {
 
       const _this = this;
 
-      _taskService.getUser(this.id).subscribe((result: any) =>{
+      _taskService.getTask(this.id).subscribe((result: any) =>{
         if(result.data.length > 0){
           console.log(result);
           _this.task = result.data[0];
@@ -57,7 +57,6 @@ export class UpdateTaskComponent implements OnInit {
           fk_shift: new FormControl('')
       }) 
   }
-
 
   ngOnInit(): void {
   }

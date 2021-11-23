@@ -16,12 +16,12 @@
         "redirect": "/dashboard/access-control"
     },
     {
-        "name": "Administración de Clientes",
-        "redirect": "/dashboard/clients"
-    },
-    {
         "name": "Agenda de Mantenimiento",
         "redirect": "/dashboard/maintenance"
+    },
+    {
+        "name": "Administración de Clientes",
+        "redirect": "/dashboard/clients"
     },
     {
         "name": "Inteligencia de Negocios",

@@ -3,43 +3,37 @@
       <mat-card>
         <form [formGroup]="form" (ngSubmit)="createTask()">
             <mat-grid-list cols="3" rowHeight="70px">
-              <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <mat-form-field class="width">
-                      <mat-label>ID</mat-label>
-                      <input matInput formControlName="id" autocomplete="off">
-                    </mat-form-field>
-                  </mat-grid-tile>
-                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
                   <mat-form-field class="width">
                     <mat-label>Descripción de Tarea</mat-label>
                     <input matInput formControlName="t_description" autocomplete="off">
                   </mat-form-field>
                 </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
                     <mat-form-field class="width">
                       <mat-label>Fecha creada</mat-label>
                       <input matInput formControlName="t_date_created" autocomplete="off">
                     </mat-form-field>
                 </mat-grid-tile>
-                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
                     <mat-form-field class="width">
                       <mat-label>Estatus</mat-label>
                       <input matInput formControlName="t_status" autocomplete="off">
                     </mat-form-field>
                 </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
                     <mat-form-field class="width">
                       <mat-label>Opcional 1</mat-label>
                       <input matInput formControlName="t_filler1" autocomplete="off">
                     </mat-form-field>
                 </mat-grid-tile>
-                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
                     <mat-form-field class="width">
                       <mat-label>Opcional 2</mat-label>
                       <input matInput formControlName="t_filler2" autocomplete="off">
                     </mat-form-field>
                 </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
                     <mat-form-field class="width">
                         <mat-label>Empleado a cargo</mat-label>
                         <mat-select formControlName="fk_employee">
@@ -49,7 +43,7 @@
                         </mat-select>
                     </mat-form-field>
                 </mat-grid-tile>
-                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
                     <mat-form-field class="width">
                         <mat-label>Turno de trabajo</mat-label>
                         <mat-select formControlName="fk_shift">

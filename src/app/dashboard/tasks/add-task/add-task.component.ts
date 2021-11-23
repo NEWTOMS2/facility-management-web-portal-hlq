@@ -28,8 +28,8 @@ export class AddTaskComponent implements OnInit {
       t_description: ['', Validators.required],
       t_date_created: [''],
       t_status: ['TO DO', Validators.required],
-      t_filler1: ['', Validators.required],
-      t_filler2: ['', Validators.required],
+      t_filler1: [''],
+      t_filler2: [''],
       fk_employee: [''],
       fk_shift: ['', Validators.required]
     })

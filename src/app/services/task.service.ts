@@ -19,7 +19,7 @@ export class TaskService {
 
   constructor(private http: HttpClient) {}
 
-  getUser(id: number) {
+  getTask(id: number) {
     return this.http.get<Task>('https://fm-tasks-system-api.us-e1.cloudhub.io/api/tasks/' + id)
     .pipe(
       catchError(this.handleError)

@@ -43,22 +43,6 @@ export class AssetsComponent implements OnInit {
       }
     });
   }
-
-  confirmCancelDialog(id: number) {
-    this.dialog
-      .confirmDialog({
-        title: 'Confirmar acción',
-        message: '¿Deseas eliminar este activo?',
-        confirmCaption: 'Eliminar',
-        cancelCaption: 'Cancelar',
-      })
-      .subscribe((confirmed) => {
-        if (confirmed) {
-          console.log('El usuario confirmo esta acción.');
-    
-        }
-      });
-  }
   
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -72,5 +56,41 @@ export class AssetsComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  confirmCancelDialog(id: number) {
+    this.dialog
+      .confirmDialog({
+        title: 'Confirmar acción',
+        message: '¿Deseas eliminar este activo?',
+        confirmCaption: 'Eliminar',
+        cancelCaption: 'Cancelar',
+      })
+      .subscribe((confirmed) => {
+        if (confirmed) {
+          console.log('El usuario confirmo esta acción.');
+          this.deleteAsset(id);
+        }
+      });
+  }
+
+  updateAsset(id: number){
+    console.log(id);
+
+    this.router.navigate(['/dashboard/assets/update'], { queryParams: { id: id } });
+  }
+
+  deleteAsset(id: number){
+    console.log(id);
+  
+    this._assetService.deleteAsset(id.toString()).subscribe(() => {
+      this.loadAssets();
+
+      this._snackBar.open('Activo eliminado exitosamente.', '', {
+        duration: 1500,
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom'
+      });
+    });
   }
 }
