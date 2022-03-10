@@ -13,6 +13,6 @@ export class BiComponent implements OnInit {
   }
 
   openNewBITap() {
-    window.open('http://18.207.109.180/#/pinboard/523e86d4-0ce9-49bb-ba96-bfbced77a3dc/');
+    window.open('http://54.242.250.36//#/pinboard/523e86d4-0ce9-49bb-ba96-bfbced77a3dc/');
   }
 }
